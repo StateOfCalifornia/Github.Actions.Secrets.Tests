@@ -11,11 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     env:
         ENVHELLOWORLD: ${{ secrets.HELLOWORLD }}
+        ENVHELLOWORLD2: "${{ secrets.HELLOWORLD }}"
     steps: 
     - uses: actions/checkout@v2
-    - name: Try Echo
+    - name: Try Echo 1A
       run: echo "$ENVHELLOWORLD"
       
-    - name: Try Echo 2
+    - name: Try Echo 1B
       run: echo "${{ secrets.HELLOWORLD }}"
+      
+    - name: Try Echo 1C
+      run: echo ${{ secrets.HELLOWORLD }}
+      
+    - name: Try Echo 2A
+      run: echo "$ENVHELLOWORLD2"
+      
+    - name: Try Echo 2B
+      run: echo "${{ ENVHELLOWORLD2 }}"
+      
+    - name: Try Echo 2C
+      run: echo ${{ ENVHELLOWORLD2 }}
     
