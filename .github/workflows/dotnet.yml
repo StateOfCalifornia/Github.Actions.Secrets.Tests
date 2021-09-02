@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-        ENVHELLOWORLD: "${{ secrets.HELLOWORLD }}"
+        ENVHELLOWORLD: ${{ secrets.HELLOWORLD }}
     steps: 
     - uses: actions/checkout@v2
     - name: Try Echo
