@@ -9,7 +9,7 @@ namespace Github.Actions.Secrets.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            var data = Environment.GetEnvironmentVariable("HelloWorld");
+            var data = Environment.GetEnvironmentVariable("EnvHelloWorld");
             throw new Exception("HelloWorld = [" + data + "]");
         }
     }
