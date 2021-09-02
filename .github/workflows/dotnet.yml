@@ -14,7 +14,7 @@ jobs:
     steps: 
     - uses: actions/checkout@v2
     - name: Try Echo
-      run: echo "$ENVHELLOWORLD"
+      run: echo $ENVHELLOWORLD
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
