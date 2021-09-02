@@ -27,8 +27,6 @@ jobs:
       run: echo "$ENVHELLOWORLD2"
       
     - name: Try Echo 2B
-      run: echo "${{ ENVHELLOWORLD2 }}"
-      
-    - name: Try Echo 2C
-      run: echo ${{ ENVHELLOWORLD2 }}
+      run: echo $ENVHELLOWORLD2
+
     
