@@ -10,6 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps: 
+    - shell: pwsh
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
@@ -20,6 +21,5 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-    - shell: pwsh
       run: |
          $Env:EnvHelloWorld="${{ secrets.HELLOWORLD }}"; dotnet test --no-build --verbosity normal
