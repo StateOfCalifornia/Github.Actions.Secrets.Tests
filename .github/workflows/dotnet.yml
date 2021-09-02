@@ -9,10 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+        ENVHELLOWORLD="${{ secrets.HELLOWORLD }}"
     steps: 
     - uses: actions/checkout@v2
-    - name: Set ENV
-      run: export ENVHELLOWORLD="${{ secrets.HELLOWORLD }}"
+    - name: Try Echo
+      run: echo %ENVHELLOWORLD%
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
