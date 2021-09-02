@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      SUPER_SECRET: ${{ secrets.HelloWorld }}
+      HELLOWORLD: "${{ secrets.HelloWorld }}"
     steps: 
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: ENVHELLOWORLD="Hi!";dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal
