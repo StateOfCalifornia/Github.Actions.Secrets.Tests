@@ -15,4 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Try Echo
       run: echo "$ENVHELLOWORLD"
+      
+    - name: Try Echo 2
+      run: echo "${{ secrets.HELLOWORLD }}"
     
