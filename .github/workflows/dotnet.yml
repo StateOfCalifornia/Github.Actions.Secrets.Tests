@@ -10,16 +10,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HELLOWORLD: "${{ secrets.HELLOWORLD }}"
+        ENVHELLOWORLD: ${{ secrets.HELLOWORLD }}
+        ENVHELLOWORLD2: "${{ secrets.HELLOWORLD }}"
     steps: 
     - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Try Echo 1A
+      run: echo "$ENVHELLOWORLD"
+      
+    - name: Try Echo 1B
+      run: echo "${{ secrets.HELLOWORLD }}"
+      
+    - name: Try Echo 1C
+      run: echo ${{ secrets.HELLOWORLD }}
+      
+    - name: Try Echo 2A
+      run: echo "$ENVHELLOWORLD2"
+      
+    - name: Try Echo 2B
+      run: echo $ENVHELLOWORLD2
+
+    

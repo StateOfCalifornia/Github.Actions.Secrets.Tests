@@ -1,0 +1,19 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - shell: bash
+    env:
+      SUPER_SECRET: ${{ secrets.HELLOWORLD }}
+      run: |
+           echo "$SUPER_SECRET"
