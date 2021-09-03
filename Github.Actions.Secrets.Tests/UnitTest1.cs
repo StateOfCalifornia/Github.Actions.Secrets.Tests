@@ -21,7 +21,7 @@ namespace Github.Actions.Secrets.Tests
         public void TestMethod1()
         {
             var data = Environment.GetEnvironmentVariable("ENVHELLOWORLD");
-            throw new Exception("HelloWorld = [" + data + "]");
+            Assert.AreEqual("This is a test of the American Broadcasting System...", data);
         }
     }
 }
